@@ -15,8 +15,7 @@ def preprocessing(text):
             word_to_id[word] = new_id
             id_to_word[new_id] = word
 
-    corpus = np.array(range(len(word_to_id)))  # np.array([word_to_id[w] for w in words)
-                                               # 사전에 숫자 순서대로 들어가므로 length로 넣어도 괜찮지 않을까?
+    corpus = np.array([word_to_id[w] for w in words])  # 말뭉치의 텍스트 데이터를 id로 바꾸기
 
     return corpus, word_to_id, id_to_word
 
@@ -29,3 +28,5 @@ if __name__ == "__main__":
     print(corpus)
     print(word_to_id)
     print(id_to_word)
+
+
